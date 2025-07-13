@@ -1,7 +1,6 @@
 # רשימה של נושאים למצגות
 
 - רקורסיה
--- [ppt1](subjects/recursion1.md)
-
+-- [ppt1](subjests\recursion1.md)
 
 יופי
