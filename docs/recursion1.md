@@ -34,3 +34,9 @@ public static void recur(int x) {
     recur(x - 1);
 }
 ```
+## 🧩 אתגר: הדפס מספרים מ־1 עד n
+
+```java
+for (int i = 1; i <= n; i++) {
+    System.out.println(i);
+}
