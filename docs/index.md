@@ -5,3 +5,5 @@
 -- [indiana jons](indianaJons.md)
 
 יופי
+
+- [המחלקות ופעולות במבנה נתונים](data-structures-classes.md)
