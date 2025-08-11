@@ -125,6 +125,7 @@ public class RecPow {
 
 <details markdown="1"><summary>פתרון</summary>
 
+
 **מימוש:**
 
 ```java
@@ -152,6 +153,7 @@ public class RecReverseString {
 **דרישות למימוש:** להחזיר true אם מחרוזת נקראת אותו דבר משני הצדדים.
 
 <details markdown="1"><summary>פתרון</summary>
+
 
 **מימוש:**
 
@@ -187,6 +189,7 @@ public class RecPalindrome {
 
 <details markdown="1"><summary>פתרון</summary>
 
+
 **מימוש:**
 
 ```java
@@ -215,6 +218,7 @@ public class RecArraySum {
 
 **נושא:** בסיסי: האם קיים  
 **דרישות למימוש:** להחזיר true אם מספר קיים במערך.
+
 
 <details markdown="1"><summary>פתרון</summary>
 
@@ -280,6 +284,7 @@ public class RecFibo {
 **דרישות למימוש:** n! עבור n≥0.
 
 <details markdown="1"><summary>פתרון</summary>
+
 
 **מימוש:**
 
