@@ -12,7 +12,7 @@ title: "Recursion Exercises"
 **נושא:** תנאי עצירה ועלייה מרקורסיה  
 **דרישות למימוש:** פונקציה רקורסיבית שמדפיסה 1..n בסדר עולה. תנאי עצירה כש־n=0.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 
 **מימוש:**
 
@@ -41,7 +41,7 @@ public class RecPrintUp {
 **נושא:** סדר קריאה לפני/אחרי הרקורסיה  
 **דרישות למימוש:** הדפסה יורדת n..1.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 
 **מימוש:**
 
@@ -68,7 +68,7 @@ public class RecPrintDown {
 **נושא:** החזרת ערך מרקורסיה  
 **דרישות למימוש:** להחזיר סכום שלם.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 
 **מימוש:**
 
@@ -96,7 +96,7 @@ public class RecSum {
 **נושא:** פירוק בעיה תלוית פרמטר  
 **דרישות למימוש:** לחשב a בחזקת b (b≥0).
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 
 **מימוש (פשוט):**
 
@@ -123,7 +123,8 @@ public class RecPow {
 **נושא:** רקורסיה על תת־מחרוזת  
 **דרישות למימוש:** לקבל מחרוזת ולהחזיר הפוכה.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
+
 
 **מימוש:**
 
@@ -151,7 +152,8 @@ public class RecReverseString {
 **נושא:** שתי הצבעות מהקצוות  
 **דרישות למימוש:** להחזיר true אם מחרוזת נקראת אותו דבר משני הצדדים.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
+
 
 **מימוש:**
 
@@ -185,7 +187,8 @@ public class RecPalindrome {
 **נושא:** עבודה עם אינדקס רץ  
 **דרישות למימוש:** סכום כל איברי int[].
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
+
 
 **מימוש:**
 
@@ -216,7 +219,8 @@ public class RecArraySum {
 **נושא:** בסיסי: האם קיים  
 **דרישות למימוש:** להחזיר true אם מספר קיים במערך.
 
-<details><summary>פתרון</summary>
+
+<details markdown="1"><summary>פתרון</summary>
 
 **מימוש:**
 
@@ -248,7 +252,7 @@ public class RecContains {
 **נושא:** רקורסיה שאינה זנבית, עלות גבוהה  
 **דרישות למימוש:** להחזיר F(n) עם F(0)=0, F(1)=1.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 
 **מימוש:**
 
@@ -279,7 +283,8 @@ public class RecFibo {
 **נושא:** תנאי עצירה ברור  
 **דרישות למימוש:** n! עבור n≥0.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
+
 
 **מימוש:**
 
@@ -307,7 +312,7 @@ public class RecFactorial {
 **נושא:** פירוק בעזרת חילוק/מודולו  
 **דרישות למימוש:** סכום הספרות ב־n לא שלילי.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 
 **מימוש:**
 
@@ -335,7 +340,7 @@ public class RecDigitSum {
 **נושא:** בניית עץ החלטות (0/1)  
 **דרישות למימוש:** להדפיס את כל המחרוזות באורך n.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 
 **מימוש:**
 
@@ -379,7 +384,7 @@ public class RecBinaryStrings {
 **נושא:** Backtracking עם סימון ביקור  
 **דרישות למימוש:** קלט מטריצה (`0` דרך, `1` קיר); התחלה `(sr,sc)` ויציאה `(tr,tc)`. להחזיר רשימת צעדים או מסלול אפשרי.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 
 **מימוש:**
 
@@ -441,7 +446,7 @@ public class RecMaze {
 **נושא:** בחירה/אי־בחירה לכל איבר  
 **דרישות למימוש:** לקלוט מערך/רשימה ולהחזיר כל תתי־הקבוצות.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 
 **מימוש:**
 
@@ -483,7 +488,7 @@ public class RecSubsets {
 **נושא:** מצביעים וקריאה חוזרת  
 **דרישות למימוש:** מחלקת `Node<T>` בסיסית, פונקציה שמחזירה ראש חדש הפוך.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 
 **מימוש:**
 
