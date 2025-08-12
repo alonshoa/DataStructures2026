@@ -5,6 +5,10 @@
 -- [indiana jons](indianaJons.md)
 -- [תרגילי רקורסיה](recursion-exercises.md)
 
+- סיבוכיות חישובית
+-- [הסבר](complexity.md)
+-- [תרגילי סיבוכיות](complexity-exercises.md)
+
 יופי
 
 - [המחלקות ופעולות במבנה נתונים](data-structures-classes.md)
