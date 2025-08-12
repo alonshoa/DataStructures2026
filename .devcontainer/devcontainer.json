@@ -1,0 +1,22 @@
+{
+  "name": "GitHub Pages Dev",
+  "image": "mcr.microsoft.com/devcontainers/jekyll:2.0",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "forwardPorts": [4000],
+  "portsAttributes": {
+    "4000": {
+      "label": "Jekyll server",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postCreateCommand": "bundle install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
+}
