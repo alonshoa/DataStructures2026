@@ -102,12 +102,16 @@ int MyNumber = 5;</code></pre>
         <span class="lang">Java</span>
         <pre><code class="language-java" dir="ltr">String s = "Hello";
 int n = s.length();
+int index = 1;
+char c = s.charAt(index); // 'e'
 String up = s.toUpperCase();</code></pre>
       </td>
       <td>
         <span class="lang">C#</span>
         <pre><code class="language-csharp" dir="ltr">string s = "Hello";
 int n = s.Length;
+int index = 1;
+char c = s[index];
 string up = s.ToUpper();</code></pre>
       </td>
       <td class="topic">
