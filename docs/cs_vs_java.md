@@ -50,7 +50,10 @@ table.code-compare td.topic { width:30%; direction:rtl; text-align:right; backgr
         <span class="lang">Java</span>
         <pre><code class="language-java" dir="ltr"> System.out.println("Hello");
 Scanner sc = new Scanner(System.in);
-String name = sc.nextLine();</code></pre>
+String name = sc.nextLine();
+int x = sc.nextInt();
+float f = sc.nextFloat();
+Boolean b = sc.nextBoolean();</code></pre>
       </td>
       <td>
         <span class="lang">C#</span>
