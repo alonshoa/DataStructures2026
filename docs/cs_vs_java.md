@@ -32,9 +32,9 @@ table.code-compare td.topic { width:30%; direction:rtl; text-align:right; backgr
 </style>
 
 <div dir="rtl">
-
-## 📝 השוואת קוד בסיסי בין C# ל-Java
-
+<h1>
+ 📝 השוואת קוד בסיסי בין C# ל-Java
+</h1>
 <table class="code-compare">
   <thead>
     <tr>
