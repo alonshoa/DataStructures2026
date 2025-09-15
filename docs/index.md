@@ -13,4 +13,7 @@
   - [תרגילי סיבוכיות](complexity-exercises.md)
 
 
+- ספריות שימושיות בפייתון
+  - [python libraries](python_libraries.md)
+
 - [המחלקות ופעולות במבנה נתונים](data-structures-classes.md)
