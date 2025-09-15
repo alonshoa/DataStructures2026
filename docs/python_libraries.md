@@ -19,6 +19,7 @@
 
 <h2>NumPy</h2>
 <p>ספריית <a href="https://numpy.org/doc/">NumPy</a> מספקת מבני נתונים וכלים לחישובים נומריים מהירים באמצעות מערכים רב-ממדיים.</p>
+
 <table class="code-compare">
   <thead>
     <tr><th>פעולה</th><th>הסבר</th></tr>
@@ -27,12 +28,15 @@
     <tr><td><code>np.array</code></td><td>יצירת מערך נומרי</td></tr>
     <tr><td><code>np.mean</code></td><td>חישוב ממוצע של איברי המערך</td></tr>
     <tr><td><code>np.zeros</code></td><td>יצירת מערך מלא באפסים</td></tr>
+
     <tr><td><code>np.ones</code></td><td>יצירת מערך מלא באחדים</td></tr>
     <tr><td><code>np.random.rand</code></td><td>יצירת מערך עם ערכים אקראיים</td></tr>
+
     <tr><td><code>np.linspace</code></td><td>יצירת סדרת ערכים בטווח שווה</td></tr>
   </tbody>
 </table>
 <pre><code class="language-python" dir="ltr">import numpy as np
+
 A = np.ones((2, 2))
 B = np.random.rand(2, 2)
 print(A * B)    # כפל איבר-איבר
@@ -45,6 +49,7 @@ print(x - 3)    # חיסור סקאלר מכל איבר
 
 <h2>Matplotlib</h2>
 <p><a href="https://matplotlib.org/stable/">Matplotlib</a> היא ספרייה ליצירת גרפים ותרשימים דו-ממדיים.</p>
+
 <table class="code-compare">
   <thead>
     <tr><th>פעולה</th><th>הסבר</th></tr>
@@ -53,12 +58,15 @@ print(x - 3)    # חיסור סקאלר מכל איבר
     <tr><td><code>plt.plot</code></td><td>שרטוט גרף קווי</td></tr>
     <tr><td><code>plt.scatter</code></td><td>תרשים נקודות</td></tr>
     <tr><td><code>plt.title</code></td><td>הוספת כותרת לגרף</td></tr>
+
     <tr><td><code>plt.xlabel</code></td><td>הגדרת שם לציר ה-X</td></tr>
     <tr><td><code>plt.ylabel</code></td><td>הגדרת שם לציר ה-Y</td></tr>
+
     <tr><td><code>plt.show</code></td><td>הצגת הגרף</td></tr>
   </tbody>
 </table>
 <pre><code class="language-python" dir="ltr">import matplotlib.pyplot as plt
+
 plt.plot([1, 2, 3], [1, 4, 9])
 plt.title("דוגמת גרף")
 plt.xlabel("ציר X")
@@ -69,6 +77,7 @@ plt.show()
 
 <h2>Pandas</h2>
 <p>ספריית <a href="https://pandas.pydata.org/docs/">Pandas</a> מספקת מבני נתונים ופעולות לניתוח נתונים טבלאיים.</p>
+
 <table class="code-compare">
   <thead>
     <tr><th>פעולה</th><th>הסבר</th></tr>
@@ -85,10 +94,12 @@ data = {"A": [1,2,3], "B": [4,5,6]}
 df = pd.DataFrame(data)
 print(df.head())
 </code></pre>
+
 <p>Pandas בנויה מעל NumPy ומציעה כלים לניקוי, סינון ומיזוג של נתונים, עבודה עם ערכים חסרים וייצוא לפורמטים שונים כמו CSV או Excel. ה-DataFrame שלה מאפשר לבצע ניתוחים מורכבים בצורה קריאה ונוחה.</p>
 
 <h2>Weights & Biases (wandb)</h2>
 <p><a href="https://docs.wandb.ai/">wandb</a> היא פלטפורמה לניטור ניסויים ולמעקב אחר תוצאות בלמידת מכונה.</p>
+
 <table class="code-compare">
   <thead>
     <tr><th>פעולה</th><th>הסבר</th></tr>
@@ -97,6 +108,7 @@ print(df.head())
     <tr><td><code>wandb.init</code></td><td>אתחול ריצה חדשה</td></tr>
     <tr><td><code>wandb.log</code></td><td>רישום נתונים בזמן אמת</td></tr>
     <tr><td><code>wandb.finish</code></td><td>סיום הריצה ושמירתה</td></tr>
+
   </tbody>
 </table>
 <pre><code class="language-python" dir="ltr">import wandb
@@ -109,6 +121,7 @@ run.finish()
 
 <h2>PyTorch</h2>
 <p><a href="https://pytorch.org/docs/stable/">PyTorch</a> היא ספרייה לבניית רשתות נוירונים ולחישובים מבוססי טנסורים.</p>
+
 <table class="code-compare">
   <thead>
     <tr><th>פעולה</th><th>הסבר</th></tr>
@@ -117,12 +130,15 @@ run.finish()
     <tr><td><code>torch.tensor</code></td><td>יצירת טנסור חדש</td></tr>
     <tr><td><code>tensor.cuda</code></td><td>העברת טנסור ל-GPU</td></tr>
     <tr><td><code>torch.nn.Linear</code></td><td>שכבה ליניארית לרשת נוירונים</td></tr>
+
     <tr><td><code>torch.nn.Module</code></td><td>מחלקת בסיס לבניית מודלים</td></tr>
     <tr><td><code>torch.optim.SGD</code></td><td>אופטימיזציה באמצעות ירידה תלולה</td></tr>
+
     <tr><td><code>torch.save</code></td><td>שמירת מודל או טנסור לקובץ</td></tr>
   </tbody>
 </table>
 <pre><code class="language-python" dir="ltr">import torch
+
 import torch.nn as nn
 
 A = torch.ones((2, 2))
