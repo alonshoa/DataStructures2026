@@ -11,6 +11,7 @@
 - סיבוכיות חישובית
   - [הסבר](complexity.md)
   - [תרגילי סיבוכיות](complexity-exercises.md)
+  - [תרגילי סיבוכיות 2](complexity-exercises-2.md)
 
 
 - ספריות שימושיות בפייתון
