@@ -17,4 +17,8 @@
 - ספריות שימושיות בפייתון
   - [python libraries](python_libraries.md)
 
+
+- מתמטיכיף
+  - [וקטורים ומטריצות](vecs_and_mats.md)
+
 - [המחלקות ופעולות במבנה נתונים](data-structures-classes.md)
