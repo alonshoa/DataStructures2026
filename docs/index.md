@@ -20,5 +20,6 @@
 
 - מתמטיכיף
   - [וקטורים ומטריצות](vecs_and_mats.md)
+  - [מצגות](ppts.html)
 
 - [המחלקות ופעולות במבנה נתונים](data-structures-classes.md)

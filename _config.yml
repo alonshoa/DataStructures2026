@@ -2,3 +2,7 @@ title: מבנה נתונים התשפו
 description: אתר המכיל את המצגות 
 theme: minima
 source: .
+
+kramdown:
+  input: GFM
+  math_engine: mathjax # you can also set this field to 'katex'

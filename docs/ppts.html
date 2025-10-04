@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PPTX Viewer — Single‑File Demo (GitHub Pages)</title>
+  <style>
+    :root {
+      --bg: #0b1220; /* dark but friendly */
+      --fg: #e9eef7;
+      --muted: #9fb0c5;
+      --accent: #5aa9ff;
+      --card: #121a2b;
+      --card2: #0f1727;
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      background: var(--bg); color: var(--fg);
+      display: grid; grid-template-rows: auto 1fr; gap: 12px;
+    }
+    header {
+      padding: 14px 18px; background: linear-gradient(180deg, var(--card), var(--card2));
+      border-bottom: 1px solid #22304a; box-shadow: 0 1px 0 #0a1120 inset;
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between;
+    }
+    header .title { font-weight: 650; letter-spacing: 0.2px; }
+    .controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    select, button {
+      background: #0e1a30; color: var(--fg); border: 1px solid #2a3c5f; border-radius: 10px;
+      padding: 8px 12px; font-size: 14px; cursor: pointer;
+    }
+    button { background: #13213a; }
+    button:hover, select:hover { border-color: var(--accent); }
+    .hint { color: var(--muted); font-size: 12px; }
+    .viewer-wrap { height: calc(100vh - 80px); padding: 0 12px 12px; }
+    .viewer-card { height: 100%; width: 100%; border: 1px solid #22304a; border-radius: 12px; overflow: hidden; background: #0c1426; }
+    iframe { width: 100%; height: 100%; border: 0; }
+    .msg { padding: 12px; }
+    .hidden { display:none; }
+    .footer { padding: 6px 12px 14px; color: var(--muted); font-size: 12px; text-align: center; }
+    a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">🖼️ PPTX Viewer (single‑file demo)</div>
+    <div class="controls">
+      <label for="picker" class="hint">Pick presentation:</label>
+      <select id="picker" aria-label="Choose a PPTX">
+        <option value="PPT1.pptx">PPT1.pptx</option>
+        <option value="PPT2.pptx">PPT2.pptx</option>
+        <option value="PPT3.pptx">PPT3.pptx</option>
+        <option value="PPT4.pptx">PPT4.pptx</option>
+      </select>
+      <button id="openBtn" title="Open selected presentation">Open</button>
+      <span class="hint">Path: <code id="pathHint">/assets/ppt/</code></span>
+    </div>
+  </header>
+
+  <div class="viewer-wrap">
+    <div class="viewer-card" id="viewerCard">
+      <div class="msg" id="message">
+        This page embeds a <strong>.pptx</strong> using an iframe to Google Docs Viewer. 
+        Put your files at <code>/assets/ppt/PPT1.pptx</code> … <code>PPT4.pptx</code> and click <em>Open</em>.
+        <br/><br/>
+        You can also deep‑link using <code>?file=PPT2</code> and optional <code>&path=/assets/ppt/</code>.
+      </div>
+      <iframe id="pptxFrame" class="hidden" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </div>
+
+  <div class="footer">Fallback viewer uses Google Docs Viewer (client‑side only). If you prefer a pure JS renderer, you can later swap to a client‑side PPTX library (e.g. <em>pptxjs/pptx-preview</em>) in this same shell.</div>
+
+  <script>
+    // ==== CONFIG (defaults) ==================================================
+    // Default folder inside your repo where the PPT files live:
+    const DEFAULT_PATH = "/assets/ppt/"; // e.g., place PPT1.pptx … PPT4.pptx here
+
+    // File base names expected: PPT1.pptx … PPT4.pptx
+
+    // ==== Helpers ============================================================
+    function qs(name, dflt = null){
+      const u = new URL(window.location.href);
+      return u.searchParams.get(name) ?? dflt;
+    }
+    function ensureTrailingSlash(p){ return p.endsWith('/') ? p : p + '/'; }
+
+    function makeAbsoluteUrl(relPath){
+      try {
+        // Build an absolute URL (required by Google Docs Viewer)
+        return new URL(relPath, window.location.origin).href;
+      } catch (e) {
+        return relPath; // fallback
+      }
+    }
+
+    function gdocsEmbedUrl(fileUrl){
+      // Google Docs Viewer renders Office files in an embeddable UI
+      const base = "https://docs.google.com/gview?embedded=1&url=";
+      return base + encodeURIComponent(fileUrl);
+    }
+
+    function showMessage(html){
+      const msg = document.getElementById('message');
+      const frame = document.getElementById('pptxFrame');
+      msg.innerHTML = html; msg.classList.remove('hidden');
+      frame.classList.add('hidden'); frame.removeAttribute('src');
+    }
+
+    function showIframe(src){
+      const msg = document.getElementById('message');
+      const frame = document.getElementById('pptxFrame');
+      msg.classList.add('hidden');
+      frame.classList.remove('hidden');
+      frame.src = src;
+    }
+
+    // ==== Main loader ========================================================
+    function loadPptx({fileBase, path}){
+      // fileBase like "PPT1" (we append .pptx)
+      const cleanPath = ensureTrailingSlash(path || DEFAULT_PATH);
+      const fileName = `${fileBase}.pptx`;
+      const rel = cleanPath + fileName;
+      const abs = makeAbsoluteUrl(rel);
+
+      // Embed via Google Docs Viewer iframe
+      const embed = gdocsEmbedUrl(abs);
+      showIframe(embed);
+
+      // Update dropdown to match
+      const picker = document.getElementById('picker');
+      for (const opt of picker.options) {
+        opt.selected = (opt.value === fileName);
+      }
+
+      // Update address bar (shallow push)
+      const url = new URL(window.location.href);
+      url.searchParams.set('file', fileBase);
+      url.searchParams.set('path', cleanPath);
+      history.replaceState(null, '', url.toString());
+    }
+
+    // ==== Wire‑up UI =========================================================
+    (function init(){
+      const picker = document.getElementById('picker');
+      const openBtn = document.getElementById('openBtn');
+      const pathHint = document.getElementById('pathHint');
+
+      const qsFile = (qs('file') || 'PPT1').replace(/\.pptx$/i, '');
+      const qsPath = qs('path') || DEFAULT_PATH;
+      pathHint.textContent = ensureTrailingSlash(qsPath);
+
+      // preload based on querystring if present
+      loadPptx({ fileBase: qsFile, path: qsPath });
+
+      openBtn.addEventListener('click', () => {
+        const val = picker.value; // e.g., 'PPT2.pptx'
+        const fileBase = val.replace(/\.pptx$/i, '');
+        loadPptx({ fileBase, path: pathHint.textContent });
+      });
+
+      // Allow quick path editing via prompt (optional power user)
+      document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p') {
+          e.preventDefault();
+          const newPath = prompt('Folder path for PPT files (must be public):', pathHint.textContent || DEFAULT_PATH);
+          if (newPath) {
+            pathHint.textContent = ensureTrailingSlash(newPath.trim());
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
