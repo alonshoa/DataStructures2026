@@ -1,5 +1,5 @@
 lsi: false
-safe: true
+safe: false
 title: מבנה נתונים התשפו
 description: אתר המכיל את המצגות 
 theme: minima
