@@ -2,7 +2,12 @@ lsi: false
 safe: false
 title: מבנה נתונים התשפו
 description: אתר המכיל את המצגות 
-theme: minima
+# theme: the-plain
+plugins:
+  - jekyll-remote-theme
+
+remote_theme: heiswayi/the-plain
+
 source: .
 incremental: false
 highlighter: rouge
