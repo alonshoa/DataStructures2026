@@ -1,7 +1,7 @@
 # רשימה של נושאים למצגות
 
 - הבדלים בין C# לJAVA
-  - [cs vs java](cs_vs_java.md)
+  - [cs vs java](cs_vs_java_2.md)
 
 - רקורסיה
   - [ppt1](recursion1.md)
